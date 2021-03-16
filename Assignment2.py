@@ -22,7 +22,7 @@ class Hospital(object):
         
         return localPatientListWithTenureFilter,localPercentage
     
-    def getOutsidePatientPercentage(self,tenure=1):
+    def getOutsidePatientPercentage(self,hospitalObject,tenure=1,):
         localPatientList,localPercentage=hospitalObject.getLocalPatientPercentage(tenure)
         outsidePatientListWithTenureFilter=list(set(hospitalObject.PatientRecords)-set(localPatientList))
         
@@ -51,7 +51,7 @@ tenure=5
 
 localPatientList,localPercentage=hospitalObject.getLocalPatientPercentage(tenure)
 
-outsidePatientList,outsidePercentage=hospitalObject.getOutsidePatientPercentage(tenure)
+outsidePatientList,outsidePercentage=hospitalObject.getOutsidePatientPercentage(hospitalObject,tenure)
 
 print("Welcome To Chinmaya Mission Hospital")
 
